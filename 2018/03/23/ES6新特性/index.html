@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="慎独">
 <meta property="og:description" content="开始使用vue和react的时候，就会用到ES6，现在来看一下ES6中的一些特性 变量声明const和letlet和const都是块级作用域 12345678function test()&amp;#123;	if (bool)&amp;#123;		let a = &quot;hello&quot;	&amp;#125;else&amp;#123;		// 在此处访问不到a		conslo.log(a)	&amp;#125;&amp;#125; 123const">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-23T05:49:44.388Z">
+<meta property="og:updated_time" content="2018-03-23T05:50:45.106Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ES6的特性(一)">
 <meta name="twitter:description" content="开始使用vue和react的时候，就会用到ES6，现在来看一下ES6中的一些特性 变量声明const和letlet和const都是块级作用域 12345678function test()&amp;#123;	if (bool)&amp;#123;		let a = &quot;hello&quot;	&amp;#125;else&amp;#123;		// 在此处访问不到a		conslo.log(a)	&amp;#125;&amp;#125; 123const">
@@ -365,6 +365,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const name = <span class="string">'lux'</span></span><br><span class="line">console.log(`hello <span class="variable">$&#123;name&#125;</span>`) //hello lux</span><br></pre></td></tr></table></figure>
 <h3 id="第二个用途"><a href="#第二个用途" class="headerlink" title="第二个用途"></a>第二个用途</h3><p>直接用(‘’)来做多行字符串的拼接</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const template = `&lt;div&gt;</span><br><span class="line">    &lt;span&gt;hello world&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;`</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="函数默认参数"><a href="#函数默认参数" class="headerlink" title="函数默认参数"></a>函数默认参数</h3><p>ES6为参数提供了默认值。在定义函数时便初始化了这个参数，以便在参数没有被传递进去时使用。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> action(num = 200) &#123;</span><br><span class="line">    console.log(num)</span><br><span class="line">&#125;</span><br><span class="line">action() //200</span><br><span class="line">action(300) //300</span><br></pre></td></tr></table></figure>
 <h3 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h3><p>箭头函数最直观的三个特点。</p>
