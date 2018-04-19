@@ -353,21 +353,18 @@
 
       
         
-          <p>有时候为了完成某些需求监听某个事件，比如：</p>
+          
+            <p>有时候为了完成某些需求监听某个事件，比如：</p>
 <ul>
 <li>通过监听 scroll 事件，检测滚动位置，根据滚动位置显示返回顶部按钮</li>
 <li>通过监听 resize 事件，对某些自适应页面调整DOM的渲染（通过CSS实现的自适应不再此范围内）</li>
 <li>通过监听 keyup 事件，监听文字输入并调用接口进行模糊匹配</li>
 </ul>
 <h3 id="html和css"><a href="#html和css" class="headerlink" title="html和css"></a>html和css</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class = <span class="string">"box"</span> onscroll=<span class="string">"myFunction()"</span>&gt;</span><br><span class="line">	</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">	.box&#123;</span><br><span class="line">		width:200px;</span><br><span class="line">		height:200px;</span><br><span class="line">		overflow:scroll;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="jquery"><a href="#jquery" class="headerlink" title="jquery"></a>jquery</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">	&lt;script&gt;</span><br><span class="line">		<span class="keyword">function</span> <span class="function"><span class="title">myFunction</span></span>()&#123;</span><br><span class="line">			<span class="built_in">let</span> scrollTop = $(<span class="string">'.box'</span>).scrollTop();</span><br><span class="line">			console.log(<span class="string">'滚动条位置：'</span> + scrollTop)</span><br><span class="line">		&#125;</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">上面的代码运行结果就是在页面滚动的时候，会在短时间内触发多次绑定事件。而DOM操作是很耗费性能的，如果在监听中，做了一些DOM操作，那无疑会给浏览器造成大量性能损失。</span><br><span class="line">下面就是对此进行优化的方法：</span><br><span class="line"></span><br><span class="line"><span class="comment">##  函数防抖</span></span><br><span class="line"></span><br><span class="line">定义：多次触发事件后，事件处理函数只执行一次，并且是在触发操作结束时执行。</span><br><span class="line">原理：对处理函数进行延时操作，若设定的延时到来之前，再次触发事件，则清除上一次的延时操作定时器，重新定时。</span><br><span class="line"></span><br><span class="line">``` bash</span><br><span class="line">	<span class="built_in">let</span> timer;</span><br><span class="line">	<span class="keyword">function</span> <span class="function"><span class="title">myFunction</span></span>() &#123;</span><br><span class="line">		 <span class="keyword">if</span>(timer)&#123;</span><br><span class="line">		        clearTimeout(timer)</span><br><span class="line">		    &#125;</span><br><span class="line">	    timer = setTimeout(<span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">	        //滚动条位置</span><br><span class="line">	        <span class="built_in">let</span> scrollTop = $(<span class="string">".box"</span>).scrollTop()</span><br><span class="line">	        console.log(<span class="string">'滚动条位置：'</span> + scrollTop);</span><br><span class="line">	        timer = undefined;</span><br><span class="line">	    &#125;,200)</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/04/19/防抖函数和节流函数/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+<h3 id="jquery"><a href="#jquery" class="headerlink" title="jquery"></a>jquery</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">	&lt;script&gt;</span><br><span class="line">		<span class="keyword">function</span> <span class="function"><span class="title">myFunction</span></span>()&#123;</span><br><span class="line">			<span class="built_in">let</span> scrollTop = $(<span class="string">'.box'</span>).scrollTop();</span><br><span class="line">			console.log(<span class="string">'滚动条位置：'</span> + scrollTop)</span><br><span class="line">		&#125;</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">上面的代码运行结果就是在页面滚动的时候，会在短时间内触发多次绑定事件。而DOM操作是很耗费性能的，如果在监听中，做了一些DOM操作，那无疑会给浏览器造成大量性能损失。</span><br><span class="line">下面就是对此进行优化的方法：</span><br><span class="line"></span><br><span class="line">&lt;!-- more --&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">##  函数防抖</span></span><br><span class="line"></span><br><span class="line">定义：多次触发事件后，事件处理函数只执行一次，并且是在触发操作结束时执行。</span><br><span class="line">原理：对处理函数进行延时操作，若设定的延时到来之前，再次触发事件，则清除上一次的延时操作定时器，重新定时。</span><br><span class="line"></span><br><span class="line">``` bash</span><br><span class="line">	<span class="built_in">let</span> timer;</span><br><span class="line">	<span class="keyword">function</span> <span class="function"><span class="title">myFunction</span></span>() &#123;</span><br><span class="line">		 <span class="keyword">if</span>(timer)&#123;</span><br><span class="line">		        clearTimeout(timer)</span><br><span class="line">		    &#125;</span><br><span class="line">	    timer = setTimeout(<span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">	        //滚动条位置</span><br><span class="line">	        <span class="built_in">let</span> scrollTop = $(<span class="string">".box"</span>).scrollTop()</span><br><span class="line">	        console.log(<span class="string">'滚动条位置：'</span> + scrollTop);</span><br><span class="line">	        timer = undefined;</span><br><span class="line">	    &#125;,200)</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="函数节流"><a href="#函数节流" class="headerlink" title="函数节流"></a>函数节流</h2><p>定义：触发函数事件后，短时间间隔内无法连续调用，只有上一次函数执行后，过了规定的时间间隔，才能进行下一次的函数调用。<br>原理：对处理函数进行延时操作，若设定的延时到来之前，再次触发事件，则清除上一次的延时操作定时器，重新定时。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> startTime = Date.now(); //开始时间</span><br><span class="line"><span class="built_in">let</span> time = 500; //间隔时间</span><br><span class="line"><span class="built_in">let</span> timer;</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">myFunction</span></span>()&#123;</span><br><span class="line">    <span class="built_in">let</span> currentTime = Date.now();</span><br><span class="line">    <span class="keyword">if</span>(currentTime - startTime &gt;= time)&#123;</span><br><span class="line">        <span class="built_in">let</span> scrollTop = $(<span class="string">'.box'</span>).scrollTop;</span><br><span class="line">        console.log(<span class="string">'滚动条位置：'</span> + scrollTop);</span><br><span class="line">        startTime = currentTime;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        clearTimeout(timer);</span><br><span class="line">        timer = setTimeout(<span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">            myFunction()</span><br><span class="line">        &#125;, 50);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
         
       
     </div>
@@ -730,6 +727,162 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/21/CSS选择器/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="王斌斌">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/user.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="慎独">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/21/CSS选择器/" itemprop="url">CSS选择器的妙用</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-21T16:16:16+08:00">
+                2018-03-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;最近看到一个面试题说是用css实现根据父元素的子元素个数分别来设置样式，下面是四个li元素:</p>
+<ul>
+<li>11111</li>
+<li>22222</li>
+<li>33333</li>
+<li>44444</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">li:nth-last-child(4):first-child ~li&#123;color:red&#125;</span><br></pre></td></tr></table></figure>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;除了第一个li元素之外的三个li元素颜色都变为红色。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">li:nth-last-child(4):first-child ~li:nth-last-child(2)&#123;color:red&#125;</span><br></pre></td></tr></table></figure>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;除了第一个li元素之外的三个元素中的倒数第二个元素变为红色。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+	<div>
+	  
+	</div>
+	
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/21/JavaScript之date对象/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -842,162 +995,6 @@
             </a>
           </div>
           <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-	<div>
-	  
-	</div>
-	
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/21/CSS选择器/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王斌斌">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/user.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="慎独">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/21/CSS选择器/" itemprop="url">CSS选择器的妙用</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-21T16:16:16+08:00">
-                2018-03-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;最近看到一个面试题说是用css实现根据父元素的子元素个数分别来设置样式，下面是四个li元素:</p>
-<ul>
-<li>11111</li>
-<li>22222</li>
-<li>33333</li>
-<li>44444</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">li:nth-last-child(4):first-child ~li&#123;color:red&#125;</span><br></pre></td></tr></table></figure>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;除了第一个li元素之外的三个li元素颜色都变为红色。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">li:nth-last-child(4):first-child ~li:nth-last-child(2)&#123;color:red&#125;</span><br></pre></td></tr></table></figure>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;除了第一个li元素之外的三个元素中的倒数第二个元素变为红色。</p>
-
-          
         
       
     </div>
