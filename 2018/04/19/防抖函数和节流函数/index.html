@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;最近看到一个面试题说是用css实现根据父元素的子元素个数分别来设置样式，下面是四个li元素:  11111 22222 33333 44444  1li:nth-last-child(4):first-child ~li&amp;#123;color:red&amp;#125; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;除了第一个li元">
+<meta name="description" content="有时候为了完成某些需求监听某个事件，比如：  通过监听 scroll 事件，检测滚动位置，根据滚动位置显示返回顶部按钮 通过监听 resize 事件，对某些自适应页面调整DOM的渲染（通过CSS实现的自适应不再此范围内） 通过监听 keyup 事件，监听文字输入并调用接口进行模糊匹配  html和css12345678910&amp;lt;div class = &quot;box&quot; onscroll=&quot;myFun">
 <meta name="keywords" content="CSS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS选择器的妙用">
-<meta property="og:url" content="http://yoursite.com/2018/03/21/CSS选择器/index.html">
+<meta property="og:title" content="防抖函数和节流函数">
+<meta property="og:url" content="http://yoursite.com/2018/04/19/防抖函数和节流函数/index.html">
 <meta property="og:site_name" content="慎独">
-<meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;最近看到一个面试题说是用css实现根据父元素的子元素个数分别来设置样式，下面是四个li元素:  11111 22222 33333 44444  1li:nth-last-child(4):first-child ~li&amp;#123;color:red&amp;#125; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;除了第一个li元">
+<meta property="og:description" content="有时候为了完成某些需求监听某个事件，比如：  通过监听 scroll 事件，检测滚动位置，根据滚动位置显示返回顶部按钮 通过监听 resize 事件，对某些自适应页面调整DOM的渲染（通过CSS实现的自适应不再此范围内） 通过监听 keyup 事件，监听文字输入并调用接口进行模糊匹配  html和css12345678910&amp;lt;div class = &quot;box&quot; onscroll=&quot;myFun">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-21T08:51:16.435Z">
+<meta property="og:updated_time" content="2018-04-19T10:49:19.224Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS选择器的妙用">
-<meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;最近看到一个面试题说是用css实现根据父元素的子元素个数分别来设置样式，下面是四个li元素:  11111 22222 33333 44444  1li:nth-last-child(4):first-child ~li&amp;#123;color:red&amp;#125; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;除了第一个li元">
+<meta name="twitter:title" content="防抖函数和节流函数">
+<meta name="twitter:description" content="有时候为了完成某些需求监听某个事件，比如：  通过监听 scroll 事件，检测滚动位置，根据滚动位置显示返回顶部按钮 通过监听 resize 事件，对某些自适应页面调整DOM的渲染（通过CSS实现的自适应不再此范围内） 通过监听 keyup 事件，监听文字输入并调用接口进行模糊匹配  html和css12345678910&amp;lt;div class = &quot;box&quot; onscroll=&quot;myFun">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/21/CSS选择器/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/19/防抖函数和节流函数/"/>
 
 
 
 
 
-  <title>CSS选择器的妙用 | 慎独</title>
+  <title>防抖函数和节流函数 | 慎独</title>
   
 
 
@@ -265,7 +265,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/21/CSS选择器/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/19/防抖函数和节流函数/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="王斌斌">
@@ -282,7 +282,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">CSS选择器的妙用</h1>
+          <h1 class="post-title" itemprop="name headline">防抖函数和节流函数</h1>
         
 
         <div class="post-meta">
@@ -294,8 +294,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-21T16:16:16+08:00">
-                2018-03-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-19T18:32:16+08:00">
+                2018-04-19
               </time>
             
 
@@ -317,8 +317,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
                   </a>
                 </span>
 
@@ -354,18 +354,14 @@
       
 
       
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;最近看到一个面试题说是用css实现根据父元素的子元素个数分别来设置样式，下面是四个li元素:</p>
+        <p>有时候为了完成某些需求监听某个事件，比如：</p>
 <ul>
-<li>11111</li>
-<li>22222</li>
-<li>33333</li>
-<li>44444</li>
+<li>通过监听 scroll 事件，检测滚动位置，根据滚动位置显示返回顶部按钮</li>
+<li>通过监听 resize 事件，对某些自适应页面调整DOM的渲染（通过CSS实现的自适应不再此范围内）</li>
+<li>通过监听 keyup 事件，监听文字输入并调用接口进行模糊匹配</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">li:nth-last-child(4):first-child ~li&#123;color:red&#125;</span><br></pre></td></tr></table></figure>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;除了第一个li元素之外的三个li元素颜色都变为红色。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">li:nth-last-child(4):first-child ~li:nth-last-child(2)&#123;color:red&#125;</span><br></pre></td></tr></table></figure>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;除了第一个li元素之外的三个元素中的倒数第二个元素变为红色。</p>
-
+<h3 id="html和css"><a href="#html和css" class="headerlink" title="html和css"></a>html和css</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class = <span class="string">"box"</span> onscroll=<span class="string">"myFunction()"</span>&gt;</span><br><span class="line">	</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">	.box&#123;</span><br><span class="line">		width:200px;</span><br><span class="line">		height:200px;</span><br><span class="line">		overflow:scroll;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="jquery"><a href="#jquery" class="headerlink" title="jquery"></a>jquery</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">	&lt;script&gt;</span><br><span class="line">		<span class="keyword">function</span> <span class="function"><span class="title">myFunction</span></span>()&#123;</span><br><span class="line">			var scrollTop = $(<span class="string">'.box'</span>).scrollTop();</span><br><span class="line">			console.log(<span class="string">'滚动条位置：'</span> + scrollTop)</span><br><span class="line">		&#125;</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">上面的代码运行结果就是在页面滚动的时候，会在短时间内触发多次绑定事件。而DOM操作是很耗费性能的，如果在监听中，做了一些DOM操作，那无疑会给浏览器造成大量性能损失。</span><br><span class="line">下面就是对此进行优化的方法：</span><br><span class="line"></span><br><span class="line"><span class="comment">##  函数防抖</span></span><br><span class="line"></span><br><span class="line">定义：多次触发事件后，事件处理函数只执行一次，并且是在触发操作结束时执行。</span><br><span class="line">原理：对处理函数进行延时操作，若设定的延时到来之前，再次触发事件，则清除上一次的延时操作定时器，重新定时。</span><br><span class="line"></span><br><span class="line">``` bash</span><br><span class="line">	<span class="built_in">let</span> timer;</span><br><span class="line">	<span class="keyword">function</span> <span class="function"><span class="title">myFunction</span></span>() &#123;</span><br><span class="line">		 <span class="keyword">if</span>(timer)&#123;</span><br><span class="line">		        clearTimeout(timer)</span><br><span class="line">		    &#125;</span><br><span class="line">	    timer = setTimeout(<span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">	        //滚动条位置</span><br><span class="line">	        <span class="built_in">let</span> scrollTop = $(<span class="string">".box"</span>).scrollTop()</span><br><span class="line">	        console.log(<span class="string">'滚动条位置：'</span> + scrollTop);</span><br><span class="line">	        timer = undefined;</span><br><span class="line">	    &#125;,200)</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -405,8 +401,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/21/JavaScript之date对象/" rel="next" title="JavaScript之date对象">
-                <i class="fa fa-chevron-left"></i> JavaScript之date对象
+              <a href="/2018/03/23/ES6新特性/" rel="next" title="ES6的特性(一)">
+                <i class="fa fa-chevron-left"></i> ES6的特性(一)
               </a>
             
           </div>
@@ -414,10 +410,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/21/SVN图标不显示/" rel="prev" title="SVN图标不显示的解决办法">
-                SVN图标不显示的解决办法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -495,8 +487,17 @@ var jiathis_config={
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -588,6 +589,22 @@ var jiathis_config={
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#html和css"><span class="nav-number">1.</span> <span class="nav-text">html和css</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jquery"><span class="nav-number">2.</span> <span class="nav-text">jquery</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
