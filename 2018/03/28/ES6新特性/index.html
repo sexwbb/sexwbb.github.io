@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Javascript," />
+  <meta name="keywords" content="ES6," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="最近在做项目的时候遇到了date方面的问题，现在整理一下自己所了解的。 不带参数1var d = new Date() 返回的是现在的日期和时间 带参数(一)1var d = new Date(milliseconds) 带参数毫秒，返回的是距离1970年1月1日的日期和时间 带参数(二)1var d = new Date(year, month, day, hours, minutes, sec">
-<meta name="keywords" content="Javascript">
+<meta name="description" content="开始使用vue和react的时候，就会用到ES6，现在来看一下ES6中的一些特性 变量声明const和letlet和const都是块级作用域 12345678function test()&amp;#123;	if (bool)&amp;#123;		let a = &quot;hello&quot;	&amp;#125;else&amp;#123;		// 在此处访问不到a		conslo.log(a)	&amp;#125;&amp;#125; 123const">
+<meta name="keywords" content="ES6">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript之date对象">
-<meta property="og:url" content="http://yoursite.com/2018/03/21/JavaScript之date对象/index.html">
+<meta property="og:title" content="ES6的特性(一)">
+<meta property="og:url" content="http://yoursite.com/2018/03/28/ES6新特性/index.html">
 <meta property="og:site_name" content="慎独">
-<meta property="og:description" content="最近在做项目的时候遇到了date方面的问题，现在整理一下自己所了解的。 不带参数1var d = new Date() 返回的是现在的日期和时间 带参数(一)1var d = new Date(milliseconds) 带参数毫秒，返回的是距离1970年1月1日的日期和时间 带参数(二)1var d = new Date(year, month, day, hours, minutes, sec">
+<meta property="og:description" content="开始使用vue和react的时候，就会用到ES6，现在来看一下ES6中的一些特性 变量声明const和letlet和const都是块级作用域 12345678function test()&amp;#123;	if (bool)&amp;#123;		let a = &quot;hello&quot;	&amp;#125;else&amp;#123;		// 在此处访问不到a		conslo.log(a)	&amp;#125;&amp;#125; 123const">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-21T08:51:39.996Z">
+<meta property="og:updated_time" content="2018-04-20T01:31:58.357Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript之date对象">
-<meta name="twitter:description" content="最近在做项目的时候遇到了date方面的问题，现在整理一下自己所了解的。 不带参数1var d = new Date() 返回的是现在的日期和时间 带参数(一)1var d = new Date(milliseconds) 带参数毫秒，返回的是距离1970年1月1日的日期和时间 带参数(二)1var d = new Date(year, month, day, hours, minutes, sec">
+<meta name="twitter:title" content="ES6的特性(一)">
+<meta name="twitter:description" content="开始使用vue和react的时候，就会用到ES6，现在来看一下ES6中的一些特性 变量声明const和letlet和const都是块级作用域 12345678function test()&amp;#123;	if (bool)&amp;#123;		let a = &quot;hello&quot;	&amp;#125;else&amp;#123;		// 在此处访问不到a		conslo.log(a)	&amp;#125;&amp;#125; 123const">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/21/JavaScript之date对象/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/28/ES6新特性/"/>
 
 
 
 
 
-  <title>JavaScript之date对象 | 慎独</title>
+  <title>ES6的特性(一) | 慎独</title>
   
 
 
@@ -265,7 +265,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/21/JavaScript之date对象/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/28/ES6新特性/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="王斌斌">
@@ -282,7 +282,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JavaScript之date对象</h1>
+          <h1 class="post-title" itemprop="name headline">ES6的特性(一)</h1>
         
 
         <div class="post-meta">
@@ -294,8 +294,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-21T16:16:16+08:00">
-                2018-03-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-28T13:26:16+08:00">
+                2018-03-28
               </time>
             
 
@@ -354,31 +354,39 @@
       
 
       
-        <p>最近在做项目的时候遇到了date方面的问题，现在整理一下自己所了解的。</p>
-<h2 id="不带参数"><a href="#不带参数" class="headerlink" title="不带参数"></a>不带参数</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var d = new Date()</span><br></pre></td></tr></table></figure>
-<p>返回的是现在的日期和时间</p>
-<h2 id="带参数-一"><a href="#带参数-一" class="headerlink" title="带参数(一)"></a>带参数(一)</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var d = new Date(milliseconds)</span><br></pre></td></tr></table></figure>
-<p>带参数毫秒，返回的是距离1970年1月1日的日期和时间</p>
-<h2 id="带参数-二"><a href="#带参数-二" class="headerlink" title="带参数(二)"></a>带参数(二)</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var d = new Date(year, month, day, hours, minutes, seconds)</span><br></pre></td></tr></table></figure>
-<ul>
-<li>year的值为：如果年份&lt;2000年，则需设定的年份减去1900。例如需设定的年份是1997则year的值应为97，即1997减去1900的结果。所以Date中可设定的年份最小为1900，如果年份&gt;2000年，则year就是该年份表示。</li>
-<li>month的值域为0～11，0代表1月，11表代表12月；</li>
-<li>date的值域在1～31之间；</li>
-<li>hrs的值域在0～23之间。从午夜到次日凌晨1点间hrs=0，从中午到下午1点间hrs=12；</li>
-<li>min和sec的值域在0～59之间</li>
-</ul>
+        <p>开始使用vue和react的时候，就会用到ES6，现在来看一下ES6中的一些特性</p>
+<h2 id="变量声明const和let"><a href="#变量声明const和let" class="headerlink" title="变量声明const和let"></a>变量声明const和let</h2><p>let和const都是块级作用域</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">test</span></span>()&#123;</span><br><span class="line">	<span class="keyword">if</span> (bool)&#123;</span><br><span class="line">		<span class="built_in">let</span> a = <span class="string">"hello"</span></span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		// 在此处访问不到a</span><br><span class="line">		conslo.log(a)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const b = <span class="string">"test"</span></span><br><span class="line">b = <span class="string">"world"</span></span><br><span class="line">//再次赋值会报错</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var funcs = [] </span><br><span class="line"><span class="keyword">for</span> (var i = 0; i &lt; 10; i++) &#123; </span><br><span class="line">	funcs.push(<span class="function"><span class="title">function</span></span>() &#123; console.log(i) &#125;) </span><br><span class="line">&#125; </span><br><span class="line">funcs.forEach(<span class="keyword">function</span>(func) &#123; </span><br><span class="line">	func() </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>运行结果是输出10十次，如果想依次输出0到9</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="built_in">let</span> i = 0; i &lt; 10; i++) &#123;</span><br><span class="line">    func.push(<span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">        console.log(i)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h2><h3 id="第一个用途"><a href="#第一个用途" class="headerlink" title="第一个用途"></a>第一个用途</h3><p>基本的字符串格式化。将表达式嵌入字符串中进行拼接。用${}来界定。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const name = <span class="string">'lux'</span></span><br><span class="line">console.log(`hello <span class="variable">$&#123;name&#125;</span>`) //hello lux</span><br></pre></td></tr></table></figure>
+<h3 id="第二个用途"><a href="#第二个用途" class="headerlink" title="第二个用途"></a>第二个用途</h3><p>直接用(‘’)来做多行字符串的拼接</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const template = `&lt;div&gt;</span><br><span class="line">    &lt;span&gt;hello world&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;`</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<h2 id="带参数-三"><a href="#带参数-三" class="headerlink" title="带参数(三)"></a>带参数(三)</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var d = new Date(dateString)</span><br></pre></td></tr></table></figure>
-<p>dateString日期字符串，但是要注意格式的正确性：</p>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="函数默认参数"><a href="#函数默认参数" class="headerlink" title="函数默认参数"></a>函数默认参数</h3><p>ES6为参数提供了默认值。在定义函数时便初始化了这个参数，以便在参数没有被传递进去时使用。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> action(num = 200) &#123;</span><br><span class="line">    console.log(num)</span><br><span class="line">&#125;</span><br><span class="line">action() //200</span><br><span class="line">action(300) //300</span><br></pre></td></tr></table></figure>
+<h3 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h3><p>箭头函数最直观的三个特点。</p>
 <ul>
-<li>正确写法：new Date(2009,1,1)或者new Date(“2009/1/1”)；</li>
-<li>错误写法：new Date(“2009-1-1”)</li>
+<li>不需要function关键字来创建函数</li>
+<li>省略return关键字</li>
+<li>继承当前上下文的 this 关键字</li>
 </ul>
-<h2 id="获取当前时间戳的方法"><a href="#获取当前时间戳的方法" class="headerlink" title="获取当前时间戳的方法"></a>获取当前时间戳的方法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var d = (new Date()).valueOf()</span><br><span class="line"></span><br><span class="line">var d = new Date().getTime()</span><br><span class="line"></span><br><span class="line">var d = +new Date()</span><br></pre></td></tr></table></figure>
-<p>返回的都是1970年1月1日至今的毫秒数，不推荐Date.parse(new Date())，因为parse只精确到秒，不精确到毫秒。</p>
-<h2 id="将字符串形式的日期转换成日期对象"><a href="#将字符串形式的日期转换成日期对象" class="headerlink" title="将字符串形式的日期转换成日期对象"></a>将字符串形式的日期转换成日期对象</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var strTime=<span class="string">"2011-04-16"</span>;   </span><br><span class="line">         </span><br><span class="line">var d= new Date(Date.parse(strTime.replace(/-/g,  <span class="string">"/"</span>)));</span><br></pre></td></tr></table></figure>
-<h2 id="将日期对象转换成日期或时间字符串"><a href="#将日期对象转换成日期或时间字符串" class="headerlink" title="将日期对象转换成日期或时间字符串"></a>将日期对象转换成日期或时间字符串</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var d = (new Date()).toLocaleDateString();   </span><br><span class="line">         </span><br><span class="line">var t = (new Date()).toLocaleTimeString();</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">   [1,2,3].map( x =&gt; x + 1 )</span><br><span class="line">   </span><br><span class="line">//等同于：</span><br><span class="line">   [1,2,3].map((<span class="keyword">function</span>(x)&#123;</span><br><span class="line">       <span class="built_in">return</span> x + 1</span><br><span class="line">   &#125;).<span class="built_in">bind</span>(this))</span><br></pre></td></tr></table></figure>
+<p>当你的函数有且仅有一个参数的时候，是可以省略掉括号的。当你函数返回有且仅有一个表达式的时候可以省略{}</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var people = name =&gt; <span class="string">'hello'</span> + name</span><br><span class="line">//参数name就没有括号</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var people = (name, age) =&gt; &#123;</span><br><span class="line">    const fullName = <span class="string">'h'</span> + name</span><br><span class="line">    <span class="built_in">return</span> fullName</span><br><span class="line">&#125; </span><br><span class="line">//如果缺少()或者&#123;&#125;就会报错</span><br></pre></td></tr></table></figure>
+<h2 id="拓展的对象功能"><a href="#拓展的对象功能" class="headerlink" title="拓展的对象功能"></a>拓展的对象功能</h2><p>ES5我们对于对象都是以键值对的形式书写，是有可能出现键值对重名的，例如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> people(name, age) &#123;</span><br><span class="line">    <span class="built_in">return</span> &#123;</span><br><span class="line">        name: name,</span><br><span class="line">        age: age</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>键值对重名，ES6可以简写如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> people(name, age) &#123;</span><br><span class="line">    <span class="built_in">return</span> &#123;</span><br><span class="line">        name,</span><br><span class="line">        age</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>ES6 同样改进了为对象字面量方法赋值的语法。ES5为对象添加方法：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const people = &#123;</span><br><span class="line">    name: <span class="string">'lux'</span>,</span><br><span class="line">    getName: <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">        console.log(this.name)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>ES6通过省略冒号与 function 关键字，将这个语法变得更简洁</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const people = &#123;</span><br><span class="line">    name: <span class="string">'lux'</span>,</span><br><span class="line">    <span class="function"><span class="title">getName</span></span> () &#123;</span><br><span class="line">        console.log(this.name)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>ES6 对象提供了Object.assign()这个方法来实现浅复制。Object.assign()可以把任意多个源对象自身可枚举的属性拷贝给目标对象，<br>然后返回目标对象。第一参数即为目标对象。在实际项目中，我们为了不改变源对象。一般会把目标对象传为{}</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const obj = Object.assign(&#123;&#125;, objA, objB)</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -405,7 +413,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Javascript/" rel="tag"><i class="fa fa-tag"></i> Javascript</a>
+            <a href="/tags/ES6/" rel="tag"><i class="fa fa-tag"></i> ES6</a>
           
         </div>
       
@@ -428,8 +436,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/03/21/SVN图标不显示/" rel="prev" title="SVN图标不显示的解决办法">
-                SVN图标不显示的解决办法 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/04/09/JavaScript之date对象/" rel="prev" title="JavaScript之date对象">
+                JavaScript之date对象 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -620,7 +628,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#不带参数"><span class="nav-number">1.</span> <span class="nav-text">不带参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#带参数-一"><span class="nav-number">2.</span> <span class="nav-text">带参数(一)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#带参数-二"><span class="nav-number">3.</span> <span class="nav-text">带参数(二)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#带参数-三"><span class="nav-number">4.</span> <span class="nav-text">带参数(三)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取当前时间戳的方法"><span class="nav-number">5.</span> <span class="nav-text">获取当前时间戳的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#将字符串形式的日期转换成日期对象"><span class="nav-number">6.</span> <span class="nav-text">将字符串形式的日期转换成日期对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#将日期对象转换成日期或时间字符串"><span class="nav-number">7.</span> <span class="nav-text">将日期对象转换成日期或时间字符串</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#变量声明const和let"><span class="nav-number">1.</span> <span class="nav-text">变量声明const和let</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模板字符串"><span class="nav-number">2.</span> <span class="nav-text">模板字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一个用途"><span class="nav-number">2.1.</span> <span class="nav-text">第一个用途</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二个用途"><span class="nav-number">2.2.</span> <span class="nav-text">第二个用途</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数"><span class="nav-number">3.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数默认参数"><span class="nav-number">3.1.</span> <span class="nav-text">函数默认参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#箭头函数"><span class="nav-number">3.2.</span> <span class="nav-text">箭头函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拓展的对象功能"><span class="nav-number">4.</span> <span class="nav-text">拓展的对象功能</span></a></li></ol></div>
             
 
           </div>
